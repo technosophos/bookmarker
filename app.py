@@ -57,7 +57,7 @@ def index(request):
 
     # REMOVE ME!
     # This resets the page after each refresh.
-    # reset(request)
+    reset(request)
 
     return Response(
         200,

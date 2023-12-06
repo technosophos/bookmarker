@@ -31,6 +31,8 @@
         </form>
         <div class="content">
             <h2 class="title is-2">Your Bookmarks</h2>
+            <p>This app is currently set to reset frequently to avoid abuse.</p>
+            <p><a href="https://github.com/technosophos/bookmarker">GitHub repo</a></p>
             <ul>
                 {% for bookmark in bookmarks %}
                 <li><a href="{{bookmark.url}}">{{bookmark.title}}</a>: {{bookmark.summary}}</li>
