@@ -1,1 +1,5 @@
-# A simple Spin HTTP component in Python
+# Bookmarker: An AI-powered bookmarking webapp
+
+Powered by Spin
+
+This app uses Fermyon Spin to create and store bookmarks. It uses an LLM to generate a summary of the page.
