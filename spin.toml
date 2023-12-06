@@ -1,0 +1,29 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["Matt Butcher <matt.butcher@fermyon.com>"]
+description = "A bookmark app"
+name = "bookmarker"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "bookmarker"
+
+[component.bookmarker]
+source = "app.wasm"
+key_value_stores = ["default"]
+allowed_outbound_hosts = ["https://*:*"]
+ai_models = ["llama2-chat"]
+files = ["index.html"]
+[component.bookmarker.build]
+command = "spin py2wasm app -o app.wasm"
+watch = ["app.py", "Pipfile"]
+
+# [[trigger.http]]
+# route = "/internal/kv-explorer/..."
+# component = "kv-explorer"
+
+# [component.kv-explorer]
+# source = { url = "https://github.com/radu-matei/spin-kv-explorer/releases/download/v0.9.0/spin-kv-explorer.wasm", digest = "sha256:07f5f0b8514c14ae5830af0f21674fd28befee33cd7ca58bc0a68103829f2f9c" }
+# key_value_stores = ["default"]

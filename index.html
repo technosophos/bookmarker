@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bookmarker: A Spin-powered bookmarking tool</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title is-1">{{title}}</h1>
+        <h2 class="subtitle">Enter a new bookmark</h2>
+        <form action="/add" method="post">
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input name="title" class="input" type="text" placeholder="Page title">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">URL</label>
+                <div class="control">
+                    <input name="url" class="input" type="text" placeholder="http://">
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <input type="submit" class="button is-link">
+                </div>
+            </div>
+        </form>
+        <div class="content">
+            <h2 class="title is-2">Your Bookmarks</h2>
+            <ul>
+                {% for bookmark in bookmarks %}
+                <li><a href="{{bookmark.url}}">{{bookmark.title}}</a>: {{bookmark.summary}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
